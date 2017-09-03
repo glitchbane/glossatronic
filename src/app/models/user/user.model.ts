@@ -1,18 +1,3 @@
-// export class User {
-//     constructor(public _id: string = null,
-//                 public authId: string = null,
-//                 public email: string,
-//                 public created?: Date,
-//                 public firstName?: string,
-//                 public lastName?: string,
-//                 public country?: string,
-//                 public stateProvince?: string,
-//                 public city?: string,
-//                 public zipCode?: string,
-//                 public ravelryName?: string,
-// ) {}
-// }
-
 
 export interface User {
     id: number;
