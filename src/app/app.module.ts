@@ -1,16 +1,39 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 
 import { AppComponent } from './app.component';
+import {HttpModule} from "@angular/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {reducers} from "./store/reducer.index";
+import {StoreModule} from "@ngrx/store";
+import {EffectsModule} from "@ngrx/effects";
+import {UserEffectsService} from "./store/user/user.effects.service";
+import {StoreRouterConnectingModule} from "@ngrx/router-store";
+import {UserDataService} from "./store/user/user.data.service";
+import {routing} from "./routes/app.routing";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+      FormsModule,
+      HttpModule,
+      routing,
+      ReactiveFormsModule,
+      StoreModule.forRoot(reducers),
+      EffectsModule.forRoot(
+          [
+              UserEffectsService
+          ]
+      ),
+      StoreRouterConnectingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+      UserDataService
+  ],
+  bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
