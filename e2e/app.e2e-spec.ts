@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('glossatronic App', () => {
+describe('glossatronic Api', () => {
   let page: AppPage;
 
   beforeEach(() => {
