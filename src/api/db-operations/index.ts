@@ -1,9 +1,9 @@
 import * as pg from 'pg';
 
 const config = {
-    user: 'glitchbane',
-    database: 'mtm',
-    password: 'Gr8G00se',
+    user: 'glossatronic-user',
+    database: 'glossatronic',
+    password: 'tbd',
     port: 5432,
     max: 10,
     idleTimeoutMillis: 30000,
@@ -91,13 +91,5 @@ export function sendErrorResult (client, errorResult, response) {
 }
 
 export const USER_VIEW = 'user_view';
-export const STUDIO_VIEW = 'studio_view';
-export const CLIENT_VIEW = 'client_view';
-export const ARTIST_VIEW = 'artist_view';
-export const PROJECT_VIEW = 'projct_view';
 
 export const userViewSelectQuery = `select * from ${USER_VIEW}`;
-export const studioViewSelectQuery = `select * from ${STUDIO_VIEW}`;
-export const clientViewSelectQuery = `select * from ${CLIENT_VIEW}`;
-export const artistViewSelectQuery = `select * from ${ARTIST_VIEW}`;
-export const projectViewSelectQuery = `select * from ${PROJECT_VIEW}`;
