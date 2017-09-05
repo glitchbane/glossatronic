@@ -4,6 +4,8 @@ Glossatronic is software that supports the creation of a generic glossary of ter
 
 At this time, simply read the Wiki for more information.  This is a nascent project.
 
+You must have Node installed on your machine to run this locally.
+
 To run the app:
 
 clone the repository: git clone https://github.com/glitchbane/glossatronic.git
