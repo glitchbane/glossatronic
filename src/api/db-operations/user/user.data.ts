@@ -24,7 +24,7 @@ if (!request.params.id) {
 export function LoginUser(request: Request, response: Response): any {
 
     params = [request.query['email']];
-    query = db.userViewSelectQuery.concat(' where user_email = $1');
+    query = db.userViewSelectQuery.concat(' where email = $1');
     expectSingleRowResult = true;
 
     db.processParameterizedRequest(query, params, response, expectSingleRowResult);
@@ -43,7 +43,7 @@ export function GetAllUsers(request: Request, response: Response) {
 }
 
 export function CreateUser(request:Request , response: Response) {
-    params = [request.body.userName, request.body.userEmail];
+    params = [request.body.firstName, request.body.lastName, request.body.email, request.body.roleId];
     query = userInsertQuery;
     expectSingleRowResult = true;
 
@@ -53,6 +53,6 @@ export function CreateUser(request:Request , response: Response) {
 const USER_TABLE = 'app_user';
 
 
-const userInsertQuery = `insert into ${USER_TABLE} (first_name, email) values ($1, $2) returning user_id`;
+const userInsertQuery = `insert into ${USER_TABLE} (first_name, last_name, email, user_role_id) values ($1, $2, $3, $4) returning user_id`;
 const userUpdateQuery = `update ${USER_TABLE} set email = $1 where user_id = $2`;
 const userDeleteQuery = `delete from ${USER_TABLE} where user_id = $1`;
