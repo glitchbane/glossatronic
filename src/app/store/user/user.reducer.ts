@@ -1,17 +1,14 @@
-
 import {User, UserData} from "../../models/user/user.model";
 import {Action} from "@ngrx/store";
 import {USER_LOGIN_SUCCESS, UserLoginSuccessAction} from "./user.actions";
 import {USER_LOGIN_FAILURE} from "./user.actions";
 import {LOGOUT_USER_SUCCESS} from "./user.actions";
-import {createSelector} from "reselect";
-
-
+import {createSelector} from 'reselect';
 
 export interface UserState {
-    ids: number[],
+    ids: number[];
     entities: User[];
-    selectedId: number | null;
+    selectedId: number;
 }
 
 const initialState: UserState = {
@@ -23,17 +20,18 @@ const initialState: UserState = {
 export function reducer (state = initialState, action: Action): UserState {
     let newState: UserState;
 
-    switch(action.type) {
+    switch (action.type) {
 
         case USER_LOGIN_SUCCESS: {
-            const thisAction = action as UserLoginSuccessAction;
-            const userData: UserData = thisAction.payload;
+            let thisAction: UserLoginSuccessAction = action as UserLoginSuccessAction,
+                  userData: UserData = thisAction.payload;
 
             const user: User = {
                 id: userData.user_id,
                 firstName: userData.first_name,
                 lastName: userData.last_name,
-                email: userData.email
+                email: userData.email,
+                roleId: userData.user_role_id
             };
 
             console.log(user);
@@ -43,9 +41,9 @@ export function reducer (state = initialState, action: Action): UserState {
 
             newState =   {
                 ids       : [user.id],
-                entities  : Object.assign({}, state.entities, {[user.id]: user}),
+                entities  : <any>Object.assign({}, state.entities, {[user.id]: user}),
                 selectedId: user.id
-            }
+            };
 
             console.log(newState);
 
@@ -69,7 +67,7 @@ export function reducer (state = initialState, action: Action): UserState {
 
             newState = {
                 ids       : null,
-                entities  : [Object.assign({}, null)],
+                entities  : [<any>Object.assign({}, null)],
                 selectedId: null
             };
 

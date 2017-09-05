@@ -1,9 +1,10 @@
 import * as pg from 'pg';
 
 const config = {
-    user: 'glossatronic-user',
+    host: 'devglossatronic.cdbce3pkmmcm.us-east-2.rds.amazonaws.com',
+    user: 'gtAdmin',
     database: 'glossatronic',
-    password: 'tbd',
+    password: 'polyglottery',
     port: 5432,
     max: 10,
     idleTimeoutMillis: 30000,
@@ -90,6 +91,6 @@ export function sendErrorResult (client, errorResult, response) {
         })
 }
 
-export const USER_VIEW = 'user_view';
+export const USER_VIEW = 'app_user';
 
 export const userViewSelectQuery = `select * from ${USER_VIEW}`;

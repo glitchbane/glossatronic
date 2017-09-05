@@ -4,6 +4,7 @@ export interface User {
     firstName: string;
     lastName: string;
     email: string;
+    roleId: number;
 
 }
 
@@ -12,4 +13,5 @@ export interface UserData {
     first_name: string;
     last_name: string;
     email: string;
+    user_role_id: number;
 }
