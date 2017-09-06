@@ -28,6 +28,8 @@
     "@ngrx/router-store": "^4.0.4",
     "@ngrx/store": "^4.0.3",
     "@ngrx/store-devtools": "^4.0.0",
+    "angular2-jwt": "^0.2.3",
+    "auth0-js": "^8.9.3",
     "auth0-lock": "^10.20.0",
     "body-parser": "^1.17.2",
     "config": "^1.26.2",
