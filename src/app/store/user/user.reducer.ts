@@ -4,14 +4,17 @@ import {USER_LOGIN_SUCCESS, UserLoginSuccessAction} from "./user.actions";
 import {USER_LOGIN_FAILURE} from "./user.actions";
 import {LOGOUT_USER_SUCCESS} from "./user.actions";
 import {createSelector} from 'reselect';
+import {isBoolean} from 'util';
 
 export interface UserState {
+    authenticatedUserId: number;
     ids: number[];
     entities: User[];
     selectedId: number;
 }
 
 const initialState: UserState = {
+    authenticatedUserId: null,
     ids       : [],
     entities  : [],
     selectedId: null
@@ -40,6 +43,7 @@ export function reducer (state = initialState, action: Action): UserState {
             }
 
             newState =   {
+                authenticatedUserId: user.id,
                 ids       : [user.id],
                 entities  : <any>Object.assign({}, state.entities, {[user.id]: user}),
                 selectedId: user.id
@@ -66,6 +70,7 @@ export function reducer (state = initialState, action: Action): UserState {
       case LOGOUT_USER_SUCCESS: {
 
             newState = {
+                authenticatedUserId: null,
                 ids       : null,
                 entities  : [<any>Object.assign({}, null)],
                 selectedId: null
@@ -83,6 +88,7 @@ export function reducer (state = initialState, action: Action): UserState {
 
     return newState;
 }
+
 
     export const getEntities = (state: UserState) => state.entities;
 

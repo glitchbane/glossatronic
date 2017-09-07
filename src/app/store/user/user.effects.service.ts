@@ -20,8 +20,8 @@ import {Action} from "@ngrx/store";
 import {of} from "rxjs/observable/of";
 
 import {
-    LOGIN_USER, 
-    LoginCompleteAction, 
+    LOGIN_USER,
+    LoginCompleteAction,
     USER_LOGIN_SUCCESS,
     LoginUserAction,
     UserLoginSuccessAction,
@@ -33,8 +33,9 @@ import {
     LOGOUT_USER,
     LogoutUserAction,
     LogoutUserSuccessAction,
-    LogoutUserFailureAction
-} from "./user.actions";
+    LogoutUserFailureAction, ADD_NEW_USER
+} from './user.actions';
+import {UserAuthenticatedAction, UserUnauthenticatedAction} from '../ui/ui.actions';
 
 
 @Injectable()
@@ -53,7 +54,8 @@ export class UserEffectsService {
                 .debug ("data received from user service")
                 .switchMap((data: any) => {
                     return [
-                            new UserLoginSuccessAction(data.result)
+                            new UserLoginSuccessAction(data.result),
+                            new UserAuthenticatedAction(data.result.user_id)
                         ];
                 })
 
@@ -66,8 +68,8 @@ export class UserEffectsService {
                                             .map(() => new LoginCompleteAction());
 
     @Effect()
-    updateUser$: Observable<Action> = this.action$
-        .ofType(UPDATE_USER)
+    addNewUser$: Observable<Action> = this.action$
+        .ofType(ADD_NEW_USER)
         .map((action: UpdateUserAction) => action.payload)
         .mergeMap(user =>
             this.userDataService.SaveNewUser(user)
@@ -81,7 +83,12 @@ export class UserEffectsService {
         .map((action: LogoutUserAction) => action.payload)
         .mergeMap((userEmail: string) =>
             this.userDataService.LogoutUser(userEmail)
-                .map(() => new LogoutUserSuccessAction())
+                .switchMap(() => {
+                return [
+                    new LogoutUserSuccessAction(),
+                    new UserUnauthenticatedAction()
+                ]
+            })
                 .catch((e) => of(new LogoutUserFailureAction(e)))
         );
 }

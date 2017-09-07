@@ -11,10 +11,15 @@ import {UserEffectsService} from "./store/user/user.effects.service";
 import {StoreRouterConnectingModule} from "@ngrx/router-store";
 import {UserDataService} from "./store/user/user.data.service";
 import {routing} from "./routes/app.routing";
+import { AuthComponent } from './auth/auth.component';
+import {AuthService} from './auth/auth.service';
+import { GlossaryContainerComponent } from './features/glossary/glossary-container/glossary-container.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthComponent,
+    GlossaryContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,7 @@ import {routing} from "./routes/app.routing";
       StoreRouterConnectingModule
   ],
   providers: [
+      AuthService,
       UserDataService
   ],
   bootstrap: [AppComponent],

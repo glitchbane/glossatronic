@@ -1,36 +1,31 @@
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/let';
-import * as fromRouter from '@ngrx/router-store';
-import * as fromUsers from './user/user.reducer';
+import * as routerReducer from '@ngrx/router-store';
+import * as userReducer from './user/user.reducer';
+import * as uiReducer from './ui/ui.reducer';
 import {createSelector} from "reselect";
 
 
-
-/**
- * As mentioned, we treat each reducer like a table in a database. This means
- * our top level state interface is just a map of keys to inner state types.
- */
-export interface UiState {
-    userId: number;
-}
 export interface State {
-    router: fromRouter.RouterReducerState;
-    user: fromUsers.UserState;
+    ui:     uiReducer.UiState;
+    router: routerReducer.RouterReducerState;
+    user:   userReducer.UserState;
 }
 
 export const reducers = {
-    router: fromRouter.routerReducer,
-    user: fromUsers.reducer
+    ui: uiReducer.reducer,
+    router: routerReducer.routerReducer,
+    user: userReducer.reducer
 };
 
 export const getUsersState = (state: State) =>  state.user;
 
 
-export const getUserEntities = createSelector(getUsersState, fromUsers.getEntities);
-export const getUserIds = createSelector(getUsersState, fromUsers.getIds);
-export const getSelectedUserId = createSelector(getUsersState, fromUsers.getSelectedId);
-export const getSelectedUser = createSelector(getUsersState, fromUsers.getSelected);
+export const getUserEntities = createSelector(getUsersState, userReducer.getEntities);
+export const getUserIds = createSelector(getUsersState, userReducer.getIds);
+export const getSelectedUserId = createSelector(getUsersState, userReducer.getSelectedId);
+export const getSelectedUser = createSelector(getUsersState, userReducer.getSelected);
 
 
 
