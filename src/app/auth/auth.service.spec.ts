@@ -2,7 +2,7 @@
 
 import {TestBed, async, inject} from '@angular/core/testing';
 import {AuthService} from "./auth.service";
-import {AuthTestHelper} from "./auth.test.helper";
+import * as testHelper from "./auth.test.helper";
 import {Router} from "@angular/router";
 
 import {Observable} from "rxjs";
@@ -23,7 +23,6 @@ describe('AuthService', () => {
   }
 
 
-  let testHelper                       = new AuthTestHelper();
   let service: AuthService             = null;
   let router                           = {
     navigate: jasmine.createSpy('navigate')

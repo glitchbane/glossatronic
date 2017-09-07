@@ -3,8 +3,6 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AuthService} from './auth/auth.service';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {StoreMockService} from './test-helper';
 
