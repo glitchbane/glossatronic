@@ -15,11 +15,17 @@ import { AuthComponent } from './auth/auth.component';
 import {AuthService} from './auth/auth.service';
 import { GlossaryContainerComponent } from './features/glossary/glossary-container/glossary-container.component';
 
+import { PrimaryNavComponent } from './features/navigation/primary-nav/primary-nav.component';
+import {SecondaryNavComponent} from './features/navigation/secondary-nav/secondary-nav.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    GlossaryContainerComponent
+    GlossaryContainerComponent,
+    SecondaryNavComponent,
+    PrimaryNavComponent
   ],
   imports: [
     BrowserModule,

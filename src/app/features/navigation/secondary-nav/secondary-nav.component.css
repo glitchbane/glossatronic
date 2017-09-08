@@ -1,0 +1,31 @@
+.navbar {
+    margin-bottom: 0px;
+    min-height: 30px;
+    height: 30px;
+}
+
+collapse.navbar-collapse {
+    height: 30px;
+}
+.ul.nav.navbar-nav.navbar-right {
+    height: 30px;
+}
+
+.ul {
+    height: 30px;
+}
+#top-bar {
+    height: 30px;
+}
+
+#bs-example-navbar-collapse-1.collapse.navbar-collapse {
+    height: 30px;
+}
+#bs-example-navbar-collapse-1 > ul {
+    height: 20px;
+}
+
+#bs-example-navbar-collapse-1 > ul > li > a{
+    height: 20px;
+    margin-top: -5px;
+}
