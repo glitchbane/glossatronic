@@ -79,8 +79,10 @@ export class AuthService {
     }
 
     public logout() {
-       localStorage.removeItem('id_token');
-       this.router.navigate(['']);
+       localStorage.removeItem('token');
+       localStorage.removeItem('loginEmail');
+       localStorage.removeItem('profile');
+       this.router.navigate(['login']);
     }
 
     public isAuthenticated() {

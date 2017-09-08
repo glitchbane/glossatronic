@@ -8,13 +8,14 @@ import {AuthService} from '../../../auth/auth.service';
 })
 export class SecondaryNavComponentComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit() {
   }
 
   doLogout() {
     this.auth.logout();
+
   }
 
   doLogin(){
