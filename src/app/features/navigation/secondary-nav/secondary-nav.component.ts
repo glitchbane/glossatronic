@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../auth/auth.service';
 
 @Component({
-  selector: 'gt-secondary-nav-component',
-  templateUrl: './secondary-nav-component.component.html',
-  styleUrls: ['./secondary-nav-component.component.css']
+  selector: 'gt-secondary-nav',
+  templateUrl: './secondary-nav.component.html',
+  styleUrls: ['./secondary-nav.component.css']
 })
-export class SecondaryNavComponentComponent implements OnInit {
+export class SecondaryNavComponent implements OnInit {
 
   constructor(public auth: AuthService) { }
 

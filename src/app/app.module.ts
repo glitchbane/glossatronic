@@ -14,8 +14,9 @@ import {routing} from "./routes/app.routing";
 import { AuthComponent } from './auth/auth.component';
 import {AuthService} from './auth/auth.service';
 import { GlossaryContainerComponent } from './features/glossary/glossary-container/glossary-container.component';
-import { SecondaryNavComponentComponent } from './features/navigation/secondary-nav-component/secondary-nav-component.component';
+
 import { PrimaryNavComponent } from './features/navigation/primary-nav/primary-nav.component';
+import {SecondaryNavComponent} from './features/navigation/secondary-nav/secondary-nav.component';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { PrimaryNavComponent } from './features/navigation/primary-nav/primary-n
     AppComponent,
     AuthComponent,
     GlossaryContainerComponent,
-    SecondaryNavComponentComponent,
+    SecondaryNavComponent,
     PrimaryNavComponent
   ],
   imports: [
