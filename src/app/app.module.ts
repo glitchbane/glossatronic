@@ -14,12 +14,17 @@ import {routing} from "./routes/app.routing";
 import { AuthComponent } from './auth/auth.component';
 import {AuthService} from './auth/auth.service';
 import { GlossaryContainerComponent } from './features/glossary/glossary-container/glossary-container.component';
+import { SecondaryNavComponentComponent } from './features/navigation/secondary-nav-component/secondary-nav-component.component';
+import { PrimaryNavComponent } from './features/navigation/primary-nav/primary-nav.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    GlossaryContainerComponent
+    GlossaryContainerComponent,
+    SecondaryNavComponentComponent,
+    PrimaryNavComponent
   ],
   imports: [
     BrowserModule,
