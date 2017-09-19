@@ -21,7 +21,7 @@ export class UserDataService {
         let params: URLSearchParams = new URLSearchParams();
         params.set('email', userEmail);
 
-        return this.http.get(this.helper.setUrl('/users/'), this.helper.getOptionsWithSearch(params))
+        return this.http.get(this.helper.setUrl('/users'), this.helper.getOptionsWithSearch(params))
             .map((response: Response) => response.json())
                    .catch((error: Response) => Observable.throw(error.json()));
     }

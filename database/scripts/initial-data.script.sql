@@ -7,6 +7,7 @@ insert into
 insert into
     app_user (email, first_name, last_name, user_role_id)
 values
+	('glitchbane@glossatronic.com', 'Sheila', 'Leverson', 1),
     ('admin@glossatronic.com', 'fake', 'admin', 1),
     ('expert@glossatronic.com', 'fake', 'expert', 2),
     ('user@glossatronic.com', 'fake', 'user', 3);

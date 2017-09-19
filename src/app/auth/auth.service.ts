@@ -4,7 +4,7 @@ import Auth0Lock from 'auth0-lock';
 
 import {Router} from "@angular/router";
 import {gtConfig} from "./auth.config";
-import {userInfo} from "os";
+// import {userInfo} from "os";
 
 
 import {Store} from "@ngrx/store";
@@ -65,9 +65,9 @@ export class AuthService {
         this.router.navigate(['glossary']);
     }
 
-    public getUserInfo() {
-        return userInfo;
-    }
+    // public getUserInfo() {
+    //     return userInfo;
+    // }
 
     public login() {
         if (this.isAuthenticated()) {
