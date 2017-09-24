@@ -17,6 +17,7 @@ import { GlossaryContainerComponent } from './features/glossary/glossary-contain
 
 import { PrimaryNavComponent } from './features/navigation/primary-nav/primary-nav.component';
 import {SecondaryNavComponent} from './features/navigation/secondary-nav/secondary-nav.component';
+import {Ng2SmartTableModule} from 'ng2-smart-table';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {SecondaryNavComponent} from './features/navigation/secondary-nav/seconda
       FormsModule,
       HttpModule,
       routing,
+      Ng2SmartTableModule,
       ReactiveFormsModule,
       StoreModule.forRoot(reducers),
       EffectsModule.forRoot(

@@ -1,6 +1,6 @@
 import {User, UserData} from "../../models/user/user.model";
 import {Action} from "@ngrx/store";
-import {USER_LOGIN_SUCCESS, UserLoginSuccessAction} from "./user.actions";
+import {USER_LOGIN_SUCCESS, UserLoginFailureAction, UserLoginSuccessAction} from './user.actions';
 import {USER_LOGIN_FAILURE} from "./user.actions";
 import {LOGOUT_USER_SUCCESS} from "./user.actions";
 import {createSelector} from 'reselect';
@@ -27,7 +27,10 @@ export function reducer (state = initialState, action: Action): UserState {
 
         case USER_LOGIN_SUCCESS: {
             let thisAction: UserLoginSuccessAction = action as UserLoginSuccessAction,
-                  userData: UserData = thisAction.payload;
+                userDataArray: UserData[] = thisAction.payload,
+                userData: UserData;
+
+            userData = userDataArray[0];
 
             const user: User = {
                 id: userData.user_id,
@@ -49,16 +52,16 @@ export function reducer (state = initialState, action: Action): UserState {
                 selectedId: user.id
             };
 
-            console.log(newState);
-
             break;
         }
 
 
       case  USER_LOGIN_FAILURE: {
-        // const user: User = action.payload;
 
-        console.log('load user failed');
+        let thisAction: UserLoginFailureAction = action as UserLoginFailureAction;
+        const error = thisAction.payload;
+
+        console.log('load user failed: ' + error);
         // effects module will create user.  There are two likely scenarios under which the load user would fail:
         //   1. the user isn't found in the db (we reset or moved a db,etc)
         //   2. the server is failing, in which case the create user will also fail.
