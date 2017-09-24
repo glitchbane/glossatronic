@@ -27,10 +27,11 @@ export function reducer (state = initialState, action: Action): UserState {
 
         case USER_LOGIN_SUCCESS: {
             let thisAction: UserLoginSuccessAction = action as UserLoginSuccessAction,
-                  userDataArray: UserData[] = thisAction.payload,
-                  userData: UserData;
-            console.log('userData: ' + userDataArray[0]);
+                userDataArray: UserData[] = thisAction.payload,
+                userData: UserData;
+
             userData = userDataArray[0];
+
             const user: User = {
                 id: userData.user_id,
                 firstName: userData.first_name,
@@ -51,14 +52,13 @@ export function reducer (state = initialState, action: Action): UserState {
                 selectedId: user.id
             };
 
-            console.log(newState);
-
             break;
         }
 
 
       case  USER_LOGIN_FAILURE: {
-          let thisAction: UserLoginFailureAction = action as UserLoginFailureAction;
+
+        let thisAction: UserLoginFailureAction = action as UserLoginFailureAction;
         const error = thisAction.payload;
 
         console.log('load user failed: ' + error);

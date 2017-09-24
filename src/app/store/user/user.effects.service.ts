@@ -52,9 +52,9 @@ export class UserEffectsService {
                 .switchMap((data: any) => {
 
                     const users = JSON.parse(data.body);
-                    console.log(users);
+
                     const userId = users[0].user_id;
-                    console.log('userId from effects: ' + userId)
+
                     return [
                             new UserLoginSuccessAction(users),
                             new UserAuthenticatedAction(userId)
