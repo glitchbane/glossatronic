@@ -38,17 +38,17 @@ to view the app go to url http://localhost:4200
 to view the api go to url http://localhost:3500 -- you should see a welcome message
 
    sample api calls:
-    ```
+```
     http://localhost:3500/v1/users/
 
     http://localhost:3500/v1/users/1
-    ```
+```
 
 
 To run karma tests from the command line
 ```
     ng test --sourcemaps=false
-    ```
+```
     (the option of sourcemaps=false is to prevent a recent problem introduced by the latest version of Angular-cli)
 
 
