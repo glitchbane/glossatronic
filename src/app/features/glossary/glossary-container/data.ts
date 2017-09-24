@@ -1,0 +1,312 @@
+export const termTranslations = {
+  "translations": [
+    {
+      "term": "apple",
+      "term_id": 1,
+      "term_translation": "pomme",
+      "term_is_published": true,
+      "language_id": 2,
+      "translation_is_published": true,
+      "translation_id": 30,
+      "glossary_expert_id": 1,
+      "language_name": "French"
+    },
+    {
+      "term": "pie",
+      "term_id": 2,
+      "term_translation": "tarte",
+      "term_is_published": true,
+      "language_id": 2,
+      "translation_is_published": true,
+      "translation_id": 34,
+      "glossary_expert_id": 1,
+      "language_name": "French"
+    },
+    {
+      "term": "potato",
+      "term_id": 3,
+      "term_translation": "pomme de terre",
+      "term_is_published": true,
+      "language_id": 2,
+      "translation_is_published": true,
+      "translation_id": 38,
+      "glossary_expert_id": 1,
+      "language_name": "French"
+    },
+    {
+      "term": "steak",
+      "term_id": 4,
+      "term_translation": "steak",
+      "term_is_published": true,
+      "language_id": 2,
+      "translation_is_published": true,
+      "translation_id": 42,
+      "glossary_expert_id": 1,
+      "language_name": "French"
+    },
+    {
+      "term": "martini",
+      "term_id": 5,
+      "term_translation": "martini",
+      "term_is_published": true,
+      "language_id": 2,
+      "translation_is_published": true,
+      "translation_id": 46,
+      "glossary_expert_id": 1,
+      "language_name": "French"
+    },
+    {
+      "term": "milk",
+      "term_id": 6,
+      "term_translation": "lait",
+      "term_is_published": true,
+      "language_id": 2,
+      "translation_is_published": true,
+      "translation_id": 50,
+      "glossary_expert_id": 1,
+      "language_name": "French"
+    },
+    {
+      "term": "pizza",
+      "term_id": 7,
+      "term_translation": "pizza",
+      "term_is_published": true,
+      "language_id": 2,
+      "translation_is_published": true,
+      "translation_id": 54,
+      "glossary_expert_id": 1,
+      "language_name": "French"
+    },
+    {
+      "term": "apple",
+      "term_id": 1,
+      "term_translation": "Apfel",
+      "term_is_published": true,
+      "language_id": 3,
+      "translation_is_published": true,
+      "translation_id": 31,
+      "glossary_expert_id": 2,
+      "language_name": "German"
+    },
+    {
+      "term": "pie",
+      "term_id": 2,
+      "term_translation": "Kuchen",
+      "term_is_published": true,
+      "language_id": 3,
+      "translation_is_published": true,
+      "translation_id": 35,
+      "glossary_expert_id": 2,
+      "language_name": "German"
+    },
+    {
+      "term": "potato",
+      "term_id": 3,
+      "term_translation": "Kartoffel",
+      "term_is_published": true,
+      "language_id": 3,
+      "translation_is_published": true,
+      "translation_id": 39,
+      "glossary_expert_id": 2,
+      "language_name": "German"
+    },
+    {
+      "term": "steak",
+      "term_id": 4,
+      "term_translation": "Steak",
+      "term_is_published": true,
+      "language_id": 3,
+      "translation_is_published": true,
+      "translation_id": 43,
+      "glossary_expert_id": 2,
+      "language_name": "German"
+    },
+    {
+      "term": "martini",
+      "term_id": 5,
+      "term_translation": "Martini",
+      "term_is_published": true,
+      "language_id": 3,
+      "translation_is_published": true,
+      "translation_id": 47,
+      "glossary_expert_id": 2,
+      "language_name": "German"
+    },
+    {
+      "term": "milk",
+      "term_id": 6,
+      "term_translation": "Milch",
+      "term_is_published": true,
+      "language_id": 3,
+      "translation_is_published": true,
+      "translation_id": 51,
+      "glossary_expert_id": 2,
+      "language_name": "German"
+    },
+    {
+      "term": "pizza",
+      "term_id": 7,
+      "term_translation": "Pizza",
+      "term_is_published": true,
+      "language_id": 3,
+      "translation_is_published": true,
+      "translation_id": 55,
+      "glossary_expert_id": 2,
+      "language_name": "German"
+    },
+    {
+      "term": "apple",
+      "term_id": 1,
+      "term_translation": "mela",
+      "term_is_published": true,
+      "language_id": 4,
+      "translation_is_published": true,
+      "translation_id": 32,
+      "glossary_expert_id": 3,
+      "language_name": "Italian"
+    },
+    {
+      "term": "pie",
+      "term_id": 2,
+      "term_translation": "torta",
+      "term_is_published": true,
+      "language_id": 4,
+      "translation_is_published": true,
+      "translation_id": 36,
+      "glossary_expert_id": 3,
+      "language_name": "Italian"
+    },
+    {
+      "term": "potato",
+      "term_id": 3,
+      "term_translation": "patata",
+      "term_is_published": true,
+      "language_id": 4,
+      "translation_is_published": true,
+      "translation_id": 40,
+      "glossary_expert_id": 3,
+      "language_name": "Italian"
+    },
+    {
+      "term": "steak",
+      "term_id": 4,
+      "term_translation": "bistecca",
+      "term_is_published": true,
+      "language_id": 4,
+      "translation_is_published": true,
+      "translation_id": 44,
+      "glossary_expert_id": 3,
+      "language_name": "Italian"
+    },
+    {
+      "term": "martini",
+      "term_id": 5,
+      "term_translation": "Martini",
+      "term_is_published": true,
+      "language_id": 4,
+      "translation_is_published": true,
+      "translation_id": 48,
+      "glossary_expert_id": 3,
+      "language_name": "Italian"
+    },
+    {
+      "term": "milk",
+      "term_id": 6,
+      "term_translation": "latte",
+      "term_is_published": true,
+      "language_id": 4,
+      "translation_is_published": true,
+      "translation_id": 52,
+      "glossary_expert_id": 3,
+      "language_name": "Italian"
+    },
+    {
+      "term": "pizza",
+      "term_id": 7,
+      "term_translation": "pizza",
+      "term_is_published": true,
+      "language_id": 4,
+      "translation_is_published": true,
+      "translation_id": 56,
+      "glossary_expert_id": 3,
+      "language_name": "Italian"
+    },
+    {
+      "term": "apple",
+      "term_id": 1,
+      "term_translation": "manzana",
+      "term_is_published": true,
+      "language_id": 5,
+      "translation_is_published": true,
+      "translation_id": 33,
+      "glossary_expert_id": 4,
+      "language_name": "Spanish"
+    },
+    {
+      "term": "pie",
+      "term_id": 2,
+      "term_translation": "tarta",
+      "term_is_published": true,
+      "language_id": 5,
+      "translation_is_published": true,
+      "translation_id": 37,
+      "glossary_expert_id": 4,
+      "language_name": "Spanish"
+    },
+    {
+      "term": "potato",
+      "term_id": 3,
+      "term_translation": "patata",
+      "term_is_published": true,
+      "language_id": 5,
+      "translation_is_published": true,
+      "translation_id": 41,
+      "glossary_expert_id": 4,
+      "language_name": "Spanish"
+    },
+    {
+      "term": "steak",
+      "term_id": 4,
+      "term_translation": "filete",
+      "term_is_published": true,
+      "language_id": 5,
+      "translation_is_published": true,
+      "translation_id": 45,
+      "glossary_expert_id": 4,
+      "language_name": "Spanish"
+    },
+    {
+      "term": "martini",
+      "term_id": 5,
+      "term_translation": "martini",
+      "term_is_published": true,
+      "language_id": 5,
+      "translation_is_published": true,
+      "translation_id": 49,
+      "glossary_expert_id": 4,
+      "language_name": "Spanish"
+    },
+    {
+      "term": "milk",
+      "term_id": 6,
+      "term_translation": "leche",
+      "term_is_published": true,
+      "language_id": 5,
+      "translation_is_published": true,
+      "translation_id": 53,
+      "glossary_expert_id": 4,
+      "language_name": "Spanish"
+    },
+    {
+      "term": "pizza",
+      "term_id": 7,
+      "term_translation": "pizza",
+      "term_is_published": true,
+      "language_id": 5,
+      "translation_is_published": true,
+      "translation_id": 57,
+      "glossary_expert_id": 4,
+      "language_name": "Spanish"
+    }
+  ]
+}

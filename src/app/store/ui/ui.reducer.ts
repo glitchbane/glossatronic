@@ -19,14 +19,15 @@ export function reducer (state = initialState, action: Action): UiState {
         case USER_AUTHENTICATED: {
             const thisAction: UserAuthenticatedAction = action as UserAuthenticatedAction,
                   userId: number = thisAction.payload;
-
+console.log('userId: ' + userId);
             newState =   {
                 authenticatedUserId: userId,
             };
 
             console.log(newState);
+            return newState;
 
-            break;
+
         }
 
         case USER_UNAUTHENTICATED: {

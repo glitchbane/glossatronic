@@ -26,7 +26,6 @@ import {
     LoginUserAction,
     UserLoginSuccessAction,
     UserLoginFailureAction,
-    UPDATE_USER,
     UpdateUserAction,
     AddNewUserSuccessAction,
     AddNewUserFailureAction,
@@ -46,16 +45,19 @@ export class UserEffectsService {
     @Effect()
     loginUser$: Observable<Action> = this.action$
         .ofType(LOGIN_USER)
-        .debug("login user action received")
         .map((action: LoginUserAction) => action.payload)
         .mergeMap((email) =>
 
             this.userDataService.LoginUser(email)
-                .debug ("data received from user service")
                 .switchMap((data: any) => {
+
+                    const users = JSON.parse(data.body);
+                    console.log(users);
+                    const userId = users[0].user_id;
+                    console.log('userId from effects: ' + userId)
                     return [
-                            new UserLoginSuccessAction(data.result),
-                            new UserAuthenticatedAction(data.result.user_id)
+                            new UserLoginSuccessAction(users),
+                            new UserAuthenticatedAction(userId)
                         ];
                 })
 
