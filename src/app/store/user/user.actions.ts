@@ -44,7 +44,7 @@ export class UserLoginFailureAction implements Action {
 export class UserLoginSuccessAction implements Action {
     type = USER_LOGIN_SUCCESS;
 
-    constructor(public payload: UserData) {
+    constructor(public payload: UserData[]) {
     }
 }
 
