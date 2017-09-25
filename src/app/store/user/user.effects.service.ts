@@ -50,8 +50,8 @@ export class UserEffectsService {
 
             this.userDataService.LoginUser(email)
                 .switchMap((data: any) => {
-
-                    const users = JSON.parse(data.body);
+console.log(data.result);
+                    const users = JSON.parse(data.result);
 
                     const userId = users[0].user_id;
 

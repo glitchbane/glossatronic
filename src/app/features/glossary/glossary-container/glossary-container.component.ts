@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {State} from '../../../store/reducer.index';
 import {Store} from '@ngrx/store';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import {LocalDataSource, Ng2SmartTableModule} from 'ng2-smart-table';
 
 import * as translationJson from './data';
 import * as _ from 'lodash';
@@ -23,23 +23,27 @@ export class GlossaryContainerComponent implements OnInit {
 
     data = [];
 
-  constructor(private store: Store<State>) { }
+    source: LocalDataSource;
+
+  constructor(private store: Store<State>) {
+
+  }
 
 
   ngOnInit() {
       // TODO: all this should/will be done in the store modules related to the data; this is poc for the ng-table
 
       const allTranslations = translationJson.termTranslations.translations;
-        console.log(allTranslations);
 
       const uniqueTerms = _.uniqBy(allTranslations, "term");
 
       const uniqueLanguages = _.uniqBy(allTranslations, "language_name");
 
       let columns = {
-          term: {
-              title: 'term',
-              editable: false
+          English: {
+              title: 'English',
+              editable: false,
+              filter: false
           }
       };
 
@@ -47,7 +51,8 @@ export class GlossaryContainerComponent implements OnInit {
 
           const newColumn = {
               title: uniqueLanguages[c].language_name,
-              editable: false
+              editable: false,
+              filter: false
           };
 
           const languageColumn = {
@@ -69,7 +74,7 @@ export class GlossaryContainerComponent implements OnInit {
               return data.term == term;
           });
 
-          let row = {term: term};
+          let row = {English: term};
 
           for (let t = 0; t < termTranslations.length; t++) {
               const translation = {
@@ -82,5 +87,39 @@ export class GlossaryContainerComponent implements OnInit {
           rows.push(row);
       }
       this.data = rows;
+      this.source = new LocalDataSource(this.data);
   }
+
+    onSearch(query: string = '') {
+        if (query === '') {
+
+            this.source.setFilter([]);
+
+        } else {
+            console.log('query');
+            this.source.setFilter([
+                                      // fields we want to include in the search
+                                      {
+                                          field : 'English',
+                                          search: query
+                                      },
+                                      {
+                                          field : 'French',
+                                          search: query
+                                      },
+                                      {
+                                          field : 'German',
+                                          search: query
+                                      },
+                                      {
+                                          field : 'Italian',
+                                          search: query
+                                      },
+                                      {
+                                          field : 'Spanish',
+                                          search: query
+                                      }
+                                  ], false);
+        }
+    }
 }
